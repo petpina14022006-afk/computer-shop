@@ -7,7 +7,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-md border-b  mb-40">
+    <nav className="sticky top-0 left-0 right-0  z-50  backdrop-blur-md border-b ">
       {/* Logo and Name of store */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5 py-4 flex items-center justify-between ">
         {/* Logo */}

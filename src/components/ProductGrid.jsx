@@ -3,6 +3,7 @@ import { useState } from 'react'
 import ProductCart from './ProductCart.jsx'
 import products from '../data/product.js'
 import categories from '../data/categories.js'
+import { Link } from 'react-router-dom'
 const ProductGrid = () => {
    const [selectedCategory, setSelectedCategory] = useState('All')
   const [searchTerm, setSearchTerm] = useState('')
@@ -60,7 +61,9 @@ const ProductGrid = () => {
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map(product => (
-            <ProductCart key={product.id} product={product} />
+            <Link to={`/productdetail/${product.id}`}>
+                <ProductCart key={product.id} product={product} />
+            </Link> 
           ))}
         </div>
 

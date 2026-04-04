@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Star, Check } from "lucide-react";
+import { Star, Check, Component } from "lucide-react";
 const ProductCart = ({ product }) => {
   const [addedToCart, setAddedToCart] = useState(false);
 
@@ -8,15 +8,28 @@ const ProductCart = ({ product }) => {
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 2000);
   };
+  const categoryColors = {
+    Labtop: "from-black to-blue-700",
+    Desktop: "from-black to-purple-700",
+    Component: "from-black to-red-700",
+    Display: "from-black to-yellow-400",
+    Peripherals: "from-black to-green-400",
+    Storage: "from-black to-orange-400",
+  };
 
   return (
     <div className="group relative">
       {/* Card Container */}
-      <div className="relative border rounded-2xl p-6  transition-all duration-500 h-full flex flex-col overflow-hidden">
+      <div className="relative border-2 rounded-2xl p-6  transition-all duration-500 h-full flex flex-col overflow-hidden  shadow-lg shadow-blue-100 bg-gray-700">
         {/* Top Section with Badge */}
         <div className="space-y-4 flex-1">
           <div className="flex items-start justify-between">
-            <span className=" text-xs border py-1 px-7 bg-gradient-to-r from-black to-blue-500 rounded-2xl font-bold uppercase tracking-wider">
+            {/* Category Badge */}
+            <span
+              className={`text-xs border py-1 px-7 rounded-2xl font-bold uppercase tracking-wider bg-gradient-to-r ${
+                categoryColors[product.category] || "from-gray-500 to-gray-700"
+              }`}
+            >
               {product.category}
             </span>
           </div>
@@ -32,7 +45,7 @@ const ProductCart = ({ product }) => {
 
           {/* Product Info */}
           <div className="space-y-2">
-            <h3 className=" font-bold text-xl  group-hover:text-amber-400 transition-colors">
+            <h3 className=" font-bold text-md  group-hover:text-amber-400 transition-colors">
               {product.name}
             </h3>
             <p className=" text-sm leading-relaxed">{product.specs}</p>
