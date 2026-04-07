@@ -20,7 +20,7 @@ const ProductGrid = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-bold text-4xl sm:text-5xl mb-4 text-balance">
-            Featured <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Products</span>
+            Featured <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">Products</span>
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">
             Handpicked selection of premium components and systems for every need

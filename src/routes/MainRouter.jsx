@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import MainLayout from '../layout/MainLayout'
 import Product from '../page/Product'
 import ProductDetail from '../components/ProductDetail'
+import CustomPC from '../page/CustomPC'
 
 
 const MainRouter = () => {
@@ -11,7 +12,7 @@ const MainRouter = () => {
         <Routes>
             <Route element={<MainLayout/>}>
                 <Route path='/' element={<Product/>} />
-                <Route />
+                <Route path='/customPC' element={<CustomPC/>} />
                 <Route />
                 <Route />
                 <Route path="/productdetail/:id" element={<ProductDetail/>}/>

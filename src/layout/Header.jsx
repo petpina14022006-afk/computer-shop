@@ -27,7 +27,7 @@ const Header = () => {
               <Link to="/">Products</Link>
             </li>
             <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/">Custom PC</Link>
+              <Link to="/customPC">Custom PC</Link>
             </li>
             <li className="text-md hover:scale-120 hover:text-blue-500">
               <Link to="/">Support</Link>
@@ -45,16 +45,16 @@ const Header = () => {
         >
           <div className=" ">
             <ul className="flex flex-col gap-4shadow/90 p-3 bg-gray-700 ">
-              <li className="text-foreground hover:text-accent transition-colors text-2xl font-medium">
+              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
                 <Link to="/">Products</Link>
               </li>
-              <li className="text-foreground hover:text-accent transition-colors text-2xl font-medium">
-                <Link to="/">Custom PC</Link>
+              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
+                <Link to="/customPC">Custom PC</Link>
               </li>
-              <li className="text-foreground hover:text-accent transition-colors text-2xl font-medium">
+              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
                 <Link to="/">Support</Link>
               </li>
-              <li className="text-foreground hover:text-accent transition-colors text-2xl font-medium">
+              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
                 <Link to="/">About</Link>
               </li>
             </ul>
@@ -68,7 +68,7 @@ const Header = () => {
           </button>
           <button className="p-2 hover:shadow/40 shadow-blue-800 hover:bg-green-400 rounded-lg transition-colors relative">
             <MdOutlineShoppingCart className="w-5 h-5" />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full"></span>
+            <span className="absolute top-1 right-1 w-2 h-2 bg-blue-400 rounded-full"></span>
           </button>
           <button
             className="md:hidden p-2 hover:shadow/40 shadow-blue-800 hover:bg-green-400 rounded-lg transition-colors"
