@@ -24,16 +24,16 @@ const Header = () => {
         <div className="hidden md:block">
           <ul className="flex gap-8">
             <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/">Products</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/customPC">Custom PC</Link>
+              <Link to="/product">Products</Link>
             </li>
             <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/">Support</Link>
+              <Link to="/support">Support</Link>
             </li>
             <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/">About</Link>
+              <Link to="/about">About</Link>
             </li>
           </ul>
         </div>
@@ -45,17 +45,17 @@ const Header = () => {
         >
           <div className=" ">
             <ul className="flex flex-col gap-4shadow/90 p-3 bg-gray-700 ">
+            <li className="text-md hover:scale-120 hover:text-blue-500">
+              <Link to="/">Home</Link>
+            </li>
               <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
-                <Link to="/">Products</Link>
+                <Link to="/product">Products</Link>
               </li>
               <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
-                <Link to="/customPC">Custom PC</Link>
+                <Link to="/support">Support</Link>
               </li>
               <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
-                <Link to="/">Support</Link>
-              </li>
-              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
-                <Link to="/">About</Link>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </div>

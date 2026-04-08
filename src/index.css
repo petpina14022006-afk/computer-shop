@@ -8,6 +8,7 @@
 .app{
   background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
   url('./assets/banner.png');
-  background-size: contain;
-  position: sticky;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
 }
