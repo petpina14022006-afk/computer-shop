@@ -4,6 +4,7 @@ import logo from "../assets/logostore.png";
 import { FaBars, FaSearch } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import LoginRegister from "../form/LoginRegister";
+import { NavLink } from "react-router-dom";
 
 const Header = ({ cartCount = 0 }) => {
   const [toggle, setToggle] = useState(false);
@@ -25,42 +26,122 @@ const Header = ({ cartCount = 0 }) => {
         </div>
 
         {/* Route page for computer*/}
-        <div className="hidden md:block">
-          <ul className="flex gap-8">
-            <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/product">Products</Link>
-            </li>
-            <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/support">Support</Link>
-            </li>
-            <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </div>
+       <div className="hidden md:block">
+  <ul className="flex gap-8">
+    
+    <li>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        Home
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/product"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        Products
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/support"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        Support
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        About
+      </NavLink>
+    </li>
+
+  </ul>
+</div>
         {/* Mobile Menu */}
         <div
-          className={`fixed top-18 right-0 h-full w-45  md:hidden transition-transform duration-300 z-50 ${
+          className={`fixed top-18 right-0 h-full w-30 md:hidden transition-transform duration-300 z-50 ${
             toggle ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className=" ">
-            <ul className="flex flex-col gap-4shadow/90 p-3 bg-gray-700 ">
-              <li className="text-md hover:scale-120 hover:text-blue-500">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
-                <Link to="/product">Products</Link>
-              </li>
-              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
-                <Link to="/support">Support</Link>
-              </li>
-              <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
-                <Link to="/about">About</Link>
-              </li>
+            <ul className="flex flex-col gap-10 gap-4shadow/90 p-3 bg-gray-500 ">
+              <li>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        Home
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/product"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        Products
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/support"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        Support
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          `transition-all duration-200 transform hover:scale-110 ${
+            isActive ? "text-blue-500 font-bold border-b border-blue-500 px-2 py-1  " : "text-white"
+          }`
+        }
+      >
+        About
+      </NavLink>
+    </li>
             </ul>
           </div>
         </div>
