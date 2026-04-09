@@ -1,18 +1,21 @@
-import React from 'react'
-import { useState } from 'react'
-import ProductCart from './ProductCart.jsx'
-import products from '../data/product.js'
-import categories from '../data/categories.js'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { useState } from "react";
+import ProductCart from "./ProductCart.jsx";
+import products from "../data/product.js";
+import categories from "../data/categories.js";
+import { Link } from "react-router-dom";
 const ProductGrid = () => {
-   const [selectedCategory, setSelectedCategory] = useState('All')
-  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredProducts = products.filter(product => {
-    const matchCategory = selectedCategory === 'All' || product.category === selectedCategory
-    const matchSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    return matchCategory && matchSearch
-  })
+  const filteredProducts = products.filter((product) => {
+    const matchCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
+    const matchSearch = product.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    return matchCategory && matchSearch;
+  });
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -20,10 +23,14 @@ const ProductGrid = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-bold text-4xl sm:text-5xl mb-4 text-balance">
-            Featured <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">Products</span>
+            Featured{" "}
+            <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">
+              Products
+            </span>
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">
-            Handpicked selection of premium components and systems for every need
+            Handpicked selection of premium components and systems for every
+            need
           </p>
         </div>
 
@@ -31,14 +38,14 @@ const ProductGrid = () => {
         <div className="mb-12 space-y-4">
           {/* Category Pills */}
           <div className="flex flex-wrap gap-2">
-            {categories.map(category => (
+            {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full  font-bold text-sm uppercase tracking-wider transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-yellow-600 to-black  shadow-lg '
-                    : 'bg-gradient-to-r from-black to-red-600 border  hover:border-green-400'
+                    ? "bg-gradient-to-r from-yellow-600 to-black  shadow-lg "
+                    : "bg-gradient-to-r from-black to-red-600 border  hover:border-green-400"
                 }`}
               >
                 {category}
@@ -60,21 +67,23 @@ const ProductGrid = () => {
 
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map(product => (
+          {filteredProducts.map((product) => (
             <Link to={`/productdetail/${product.id}`}>
-                <ProductCart key={product.id} product={product} />
-            </Link> 
+              <ProductCart key={product.id} product={product} />
+            </Link>
           ))}
         </div>
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
-            <p className=" font-bold">No products found matching your criteria</p>
+            <p className=" font-bold">
+              No products found matching your criteria
+            </p>
           </div>
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProductGrid
+export default ProductGrid;

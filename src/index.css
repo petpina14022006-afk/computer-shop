@@ -1,13 +1,15 @@
 @import "tailwindcss";
-.banner{
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-  url('./assets/banner.png');
+.banner {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./assets/banner.png");
   background-size: cover;
   background-position: center;
 }
-.app{
-  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
-  url('./assets/banner.png');
+.app {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("./assets/banner.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;

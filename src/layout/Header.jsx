@@ -13,7 +13,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-5">
           <div className="w-15 h-8 flex items-center justify-center ">
-              <img src={logo} alt="" className="w-full rounded" />
+            <img src={logo} alt="" className="w-full rounded" />
           </div>
           <span className=" font-bold text-3xl hidden sm:block">
             Computer Store
@@ -45,9 +45,9 @@ const Header = () => {
         >
           <div className=" ">
             <ul className="flex flex-col gap-4shadow/90 p-3 bg-gray-700 ">
-            <li className="text-md hover:scale-120 hover:text-blue-500">
-              <Link to="/">Home</Link>
-            </li>
+              <li className="text-md hover:scale-120 hover:text-blue-500">
+                <Link to="/">Home</Link>
+              </li>
               <li className="text-md hover:scale-120 hover:text-blue-500 text-2xl font-medium">
                 <Link to="/product">Products</Link>
               </li>

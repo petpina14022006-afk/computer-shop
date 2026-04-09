@@ -1,27 +1,25 @@
-import React from 'react'
-import Contact from '../components/Contact'
-import Question from '../components/Question'
+import React from "react";
+import Contact from "../components/Contact";
+import Question from "../components/Question";
 
 const Support = () => {
   return (
     <div className="py-10">
-        {/* hero section */}
-       <section className="py-10 border-b">
+      {/* hero section */}
+      <section className="py-10 ">
         <div className="max-w-4xl mx-auto text-center ">
-          <h1 className="text-5xl font-bold mb-6" >
-            We're Here to Help
-          </h1>
+          <h1 className="text-5xl font-bold mb-6">We're Here to Help</h1>
           <p className="text-xl  mb-8">
             Get answers to common questions and connect with our support team
           </p>
         </div>
       </section>
-      
+
       {/* contact */}
-      <Contact/>
+      <Contact />
 
       {/* FAQ for customer*/}
-      <Question/>
+      <Question />
 
       {/* CTA Section */}
       <section className="max-w-5xl mx-auto px-8 py-16">
@@ -30,15 +28,19 @@ const Support = () => {
             Didn&apos;t find what you needed?
           </h2>
           <p className="text-muted-foreground mb-6">
-            Our support team is always ready to help with any questions or concerns
+            Our support team is always ready to help with any questions or
+            concerns
           </p>
-          <a href="" className="inline-block px-8 py-3 bg-gradient-to-r  from-red-500 to-pink-500 text-black font-bold rounded-lg hover:shadow-lg hover:shadow-green-500 transition-all duration-300" >
+          <a
+            href=""
+            className="inline-block px-8 py-3 bg-gradient-to-r  from-red-500 to-pink-500 text-black font-bold rounded-lg hover:shadow-lg hover:shadow-green-500 transition-all duration-300"
+          >
             Contact Support
           </a>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Support
+export default Support;
