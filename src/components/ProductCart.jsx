@@ -78,7 +78,7 @@ const ProductCart = ({ product }) => {
             </p>
           </div>
 
-          <button
+          {/* <button
             onClick={handleAddToCart}
             className={`px-4 py-2 rounded-lg  font-bold text-sm uppercase transition-all duration-300 flex items-center gap-2 ${
               addedToCart
@@ -94,7 +94,7 @@ const ProductCart = ({ product }) => {
             ) : (
               "+ Cart"
             )}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

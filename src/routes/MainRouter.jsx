@@ -7,16 +7,16 @@ import Support from "../page/Support";
 import About from "../page/About";
 import Home from "../page/Home";
 
-const MainRouter = () => {
+const MainRouter = ({ setCartCount ,cartCount}) => {
   return (
     <>
       <Routes>
-        <Route element={<MainLayout />}>
+        <Route element={<MainLayout cartCount={cartCount}/>}>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
           <Route path="/support" element={<Support />} />
           <Route path="/about" element={<About />} />
-          <Route path="/productdetail/:id" element={<ProductDetail />} />
+          <Route path="/productdetail/:id" element={<ProductDetail setCartCount={setCartCount} />} />
         </Route>
         <Route path="*" element={"Not found"} />
       </Routes>

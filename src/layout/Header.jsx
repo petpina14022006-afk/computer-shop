@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logostore.png";
 import { FaBars, FaSearch } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import LoginRegister from "../form/LoginRegister";
 
-const Header = () => {
+const Header = ({ cartCount = 0 }) => {
   const [toggle, setToggle] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
+
   return (
     <nav className="sticky top-0 left-0 right-0  z-50  backdrop-blur-md border-b ">
       {/* Logo and Name of store */}
@@ -63,12 +67,34 @@ const Header = () => {
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
-          <button className="p-2 hover:shadow/40 shadow-blue-800 hover:bg-green-400 rounded-lg transition-colors">
-            <FaSearch className="w-5 h-5" />
+          <button
+            onClick={() => {
+              setIsLogin(true);
+              setShowModal(true);
+            }}
+            className="px-3 py-1 bg-blue-500 text-white rounded"
+          >
+            Login
           </button>
+
+          <button
+            onClick={() => {
+              setIsLogin(false);
+              setShowModal(true);
+            }}
+            className="px-3 py-1 bg-green-500 text-white rounded"
+          >
+            Register
+          </button>
+          {showModal && (
+            <LoginRegister isLogin={isLogin} setShowModal={setShowModal} />
+          )}
           <button className="p-2 hover:shadow/40 shadow-blue-800 hover:bg-green-400 rounded-lg transition-colors relative">
             <MdOutlineShoppingCart className="w-5 h-5" />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-blue-400 rounded-full"></span>
+
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+              {cartCount}
+            </span>
           </button>
           <button
             className="md:hidden p-2 hover:shadow/40 shadow-blue-800 hover:bg-green-400 rounded-lg transition-colors"

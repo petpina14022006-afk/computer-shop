@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import products from "../data/product";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Star } from "lucide-react";
+import BtnBuyNow from "./BtnBuyNow";
+
 const categoryColors = {
   Labtop: "from-black to-blue-700",
   Desktop: "from-black to-purple-700",
@@ -10,11 +12,20 @@ const categoryColors = {
   Peripherals: "from-black to-green-400",
   Storage: "from-black to-orange-400",
 };
-const ProductDetail = () => {
+
+const ProductDetail = ({ setCartCount }) => {
   const { id } = useParams();
   const finddata = products.find((c) => c.id == id);
-  console.log(finddata);
   const [count, setcount] = useState(1);
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const handleAddToCart = () => {
+    setCartCount((prev) => prev + 1);
+    setAddedToCart(true);
+
+    setTimeout(() => setAddedToCart(false), 1500);
+  };
+
   const totalPrice = finddata.price * count;
   return (
     <>
@@ -88,18 +99,37 @@ const ProductDetail = () => {
                 ${totalPrice.toLocaleString()}
               </div>
             </div>
-            <button className="border px-4 py-2 rounded-lg cursor-pointer bg-red-600 hover:scale-110 hover:text-lg transition-all duration-300">
-              Buy Now
-            </button>
-            <button className="border px-7 py-2 rounded-lg cursor-pointer bg-green-600 hover:scale-110 hover:text-lg transition-all duration-300">
-              +cart
+
+            {/* buy now */}
+            <BtnBuyNow
+              product={finddata}
+              quantity={count}
+              totalPrice={totalPrice}
+            />
+
+            <button
+              onClick={handleAddToCart}
+              className={`border px-7 py-2 rounded-lg cursor-pointer bg-green-600 hover:scale-110 hover:text-lg transition-all duration-300 ${
+                addedToCart
+                  ? "bg-green-500/20 text-green-400 border border-green-500/50"
+                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:scale-105"
+              }`}
+            >
+              {addedToCart ? (
+                <>
+                  <Check className="w-4 h-4" />
+                  Added
+                </>
+              ) : (
+                "+ Cart"
+              )}
             </button>
           </div>
           <div className="border w-full h-1 md:w-1 md:h-full bg-white"></div>
           <div className="h-full md:w-60 lg:w-150 flex items-center justify-center  ">
             <div className="flex flex-col gap-5 border w-100 md:w-60 lg:w-100 px-4 py-4 rounded-lg shadow-lg  shadow-blue-100">
-              {finddata.detail.map((index) => (
-                <p>• {index}</p>
+              {finddata.detail.map((index,i) => (
+                <p key={i}>• {index}</p>
               ))}
             </div>
           </div>

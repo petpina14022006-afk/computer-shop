@@ -20,6 +20,20 @@ import Swift from "../assets/products/display/dis1.png";
 import VG27AQ from "../assets/products/display/dis2.png";
 import PA278CV from "../assets/products/display/dis3.png";
 
+import III from "../assets/products/peripherals/per1.png";
+import RX from "../assets/products/peripherals/per2.png";
+import Delta from "../assets/products/peripherals/per3.png";
+
+import Arion from "../assets/products/storage/sto1.png";
+import SQ7 from "../assets/products/storage/sto2.png";
+import AS1000 from "../assets/products/storage/sto3.png";
+
+
+
+
+
+
+
 const products = [
   {
     id: 1,
@@ -373,7 +387,7 @@ const products = [
   {
     id: 19,
     name: "ASUS ROG Strix Impact III Gaming Mouse",
-    image: "/products/rog-mouse.png",
+    image: III,
     category: "Peripherals",
     specs: "Wireless • RGB • 36,000 DPI",
     price: 79.0,
@@ -392,7 +406,7 @@ const products = [
   {
     id: 20,
     name: "ASUS ROG Strix Scope RX Gaming Keyboard",
-    image: "/products/rog-keyboard.png",
+    image: RX,
     category: "Peripherals",
     specs: "Mechanical • RGB • RX Switches",
     price: 129.0,
@@ -411,7 +425,7 @@ const products = [
   {
     id: 21,
     name: "ASUS ROG Delta S Gaming Headset",
-    image: "/products/rog-headset.png",
+    image: Delta,
     category: "Peripherals",
     specs: "USB-C • Hi-Res Audio • RGB",
     price: 149.0,
@@ -432,7 +446,7 @@ const products = [
   {
     id: 22,
     name: "ASUS ROG Strix Arion Portable SSD",
-    image: "/products/rog-ssd-portable.png",
+    image: Arion,
     category: "Storage",
     specs: "1TB • USB-C • Portable NVMe Enclosure",
     price: 149.0,
@@ -451,7 +465,7 @@ const products = [
   {
     id: 23,
     name: "ASUS ROG Strix SQ7 1TB NVMe SSD",
-    image: "/products/rog-nvme.png",
+    image: SQ7,
     category: "Storage",
     specs: "1TB • PCIe 4.0 • Up to 7000MB/s",
     price: 129.0,
@@ -470,7 +484,7 @@ const products = [
   {
     id: 24,
     name: "ASUS TUF Gaming AS1000 External SSD",
-    image: "/products/tuf-external-ssd.png",
+    image: AS1000,
     category: "Storage",
     specs: "1TB • USB 3.2 • Rugged Design",
     price: 119.0,

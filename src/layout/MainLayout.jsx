@@ -3,10 +3,10 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 
-const MainLayout = () => {
+const MainLayout = ({ setCartCount, cartCount }) => {
   return (
     <div>
-      <Header />
+      <Header cartCount={cartCount} />
       <Outlet />
       <Footer />
     </div>
